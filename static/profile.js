@@ -19,9 +19,10 @@ $("#profile-form").on('submit', (evt) => {
     occupation: $('#occupation-field').val()
   };
 
-  $.post('/api/profile', (response) => {
+  $.post('/api/profile', formData, (response) => {
+    console.log(response)
     $('#profiles').append(`
-      <li>${response.name} the ${response.occupation} is ${response.age}</li>
+      <li>${response.fullname} the ${response.occupation} is ${response.age}</li>
     `);
   });
 });
