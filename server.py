@@ -14,9 +14,9 @@ def index():
 def profile():
     """Return results from profile form."""
 
-    fullname = request.form['name']
-    age = 'replace me'
-    occupation = 'replace me'
+    fullname = request.form.get('name')
+    age = request.form.get('age')
+    occupation = request.form.get('occupation')
 
     # (pretend there's code to add the customer to the
     # database... we'll learn about that next week!)
